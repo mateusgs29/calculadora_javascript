@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
     <div class="calculadora">
-        <div class="visor">00000000</div>
+        <div class="visor"></div>
         <div class="teclado_grid">
-            <div class="botao">C</div>
-            <div class="botao">( )</div>
-            <div class="botao">%</div>
-            <div class="botao">/</div>
-            <div class="botao">7</div>
-            <div class="botao">8</div>
-            <div class="botao">9</div>
-            <div class="botao">*</div>
-            <div class="botao">4</div>
-            <div class="botao">5</div>
-            <div class="botao">6</div>
-            <div class="botao">-</div>
-            <div class="botao">1</div>
-            <div class="botao">2</div>
-            <div class="botao">3</div>
-            <div class="botao">+</div>
-            <div class="botao">+/-</div>
-            <div class="botao">0</div>
-            <div class="botao">.</div>
-            <div class="botao">=</div>
+            <div class="botao operador" onclick="clicked('(')">(</div>
+            <div class="botao operador" onclick="clicked(')')">)</div>
+            <div class="botao operador"> <i class="fas fa-percentage"></i> </div>
+            <div class="botao corrigir" onclick=reset()>CE</div>
+            <div class="botao" onclick=clicked(7)>7</div>
+            <div class="botao" onclick=clicked(8)>8</div>
+            <div class="botao" onclick=clicked(9)>9</div>
+            <div class="botao operador" onclick="clicked('/')"> <i class="fas fa-divide"></i> </div>
+            <div class="botao" onclick=clicked(4)>4</div>
+            <div class="botao" onclick=clicked(5)>5</div>
+            <div class="botao" onclick=clicked(6)>6</div>
+            <div class="botao operador" onclick="clicked('*')"> <i class="fas fa-times"></i> </div>
+            <div class="botao" onclick=clicked(1)>1</div>
+            <div class="botao" onclick=clicked(2)>2</div>
+            <div class="botao" onclick=clicked(3)>3</div>
+            <div class="botao operador" onclick="clicked('-')"> <i class="fas fa-minus"></i> </div>
+            <div class="botao" onclick="clicked('.')">.</div>
+            <div class="botao" onclick=clicked(0)>0</div>
+            <div class="botao btn_resultado" onclick=result()> <i class="fas fa-equals"></i> </div>
+            <div class="botao operador" onclick="clicked('+')"> <i class="fas fa-plus"></i> </div>
         </div>
         </div>
 
