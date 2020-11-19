@@ -2,18 +2,24 @@ let visor = document.querySelector(".visor");
 let expressao = '';
 let digitouNumero = false;
 
-function clicked(n){
+function clicked(elemento){
     // se digitar um número, pode digitar a vontade
-    if(typeof(n) === "number"){
-        expressao += n;
-        visor.innerHTML = expressao;
-        digitouNumero = true;
+    if(typeof(elemento) === "number"){
+        aplicando(elemento, true);
     // se não for um número, verifica se já foi digitado algum número
     }else if(digitouNumero){ 
-        expressao += n;
-        visor.innerHTML = expressao;
-        digitouNumero = false;
+        aplicando(elemento, false);
     }
+    // se expressão estiver vazia e for clicado - ou (
+    if(!expressao && (elemento === "-" || elemento === "(")){
+        aplicando(elemento, false);
+    }
+}
+
+function aplicando(elemento, status){
+    expressao += elemento;
+    visor.innerHTML = expressao;
+    digitouNumero = status;
 }
 
 function reset(){
@@ -25,7 +31,7 @@ function reset(){
 
 function result(){
     if(expressao){
-        let resultado = eval(expressao).toFixed(4); // eval faz o calculo de uma expressão string 
+        let resultado = eval(expressao).toFixed(5); // eval faz o calculo de uma expressão string 
         visor.innerHTML = Number(resultado); // transforma em Number para tirar os zeros a direita
         expressao = '';
         digitouNumero = false;
