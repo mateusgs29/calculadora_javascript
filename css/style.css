@@ -2,13 +2,11 @@
 
 body{
     margin: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 
 .calculadora{
+    margin: 20px auto auto;
+    width: 320px;
     display: flex;
     background-color: #c2c1c1;
     padding: 25px;
@@ -21,12 +19,14 @@ body{
 .visor{
     background-color: #fff;
     border: 1px solid #000;
-    width: 300px;
-    height: 50px;
-    font-size: 40px;
+    width: auto;
+    height: 60px;
+    font-size: 35px;
     text-align: right;
-    padding: 0 5px;
+    line-height: 60px;
+    padding: auto 5px;
     border-radius: 5px;
+    overflow: hidden;
 }
 
 .teclado_grid{
@@ -54,6 +54,14 @@ body{
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.3);
 }
 
+.botao:hover{
+    background-color: #494949;
+}
+
+.botao:active{
+    transform: translateY(3px);
+}
+
 .corrigir{
     color: rgb(255, 123, 123);
 }
@@ -64,4 +72,8 @@ body{
 
 .btn_resultado{
     background-color: rgb(75, 145, 72);
+}
+
+.btn_resultado:hover{
+    background-color: rgb(59, 116, 57);
 }
