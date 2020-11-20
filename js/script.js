@@ -1,9 +1,10 @@
 let visor = document.querySelector(".visor");
 let expressao = "";
-let digitouNumero = false;
+let digitouNumero = false;// trava a digitação do simbolo em 1 vez
 
 var simbolos = {
     "-": function(){
+        // se expressão estiver vazia ou antes tiver um (
         if(!expressao || (expressao.slice(-1) === "(")){
             aplicando("-", false);
         }
